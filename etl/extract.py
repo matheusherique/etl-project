@@ -14,7 +14,7 @@ class Extract():
         return asyncio.run(self.__gather_list())
 
     async def __gather_list(self):
-        LOGGER.info('Starting to extract data...')
+        LOGGER.debug('Starting to extract data...')
         async with aiohttp.ClientSession() as session:
             tasks = []
             page_id = 1
@@ -37,5 +37,5 @@ class Extract():
                         return result_data["numbers"]
                     else:
                         return
-            except KeyError:
-                LOGGER.warning('Getting simulated error.')
+            except KeyError as err:
+                LOGGER.warning(f'Getting simulated error: {err}')

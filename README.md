@@ -20,6 +20,12 @@ SECRET_KEY=YOUR_SECRET_KEY
 $ docker-compose up
 ```
 
+## Making a request to sorted numbers
+
+```shell
+$ curl -X GET http://0.0.0.0:8000/api/sorted_numbers
+```
+
 ### So you shall migrate
 
 ```shell

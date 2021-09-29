@@ -1,18 +1,17 @@
 class Sort():
-    def quicksort(self, alist):
-        self.__quicksort_helper(alist,0,len(alist)-1)
+    def quicksort(self, a_list):
+        self.__quicksort_helper(a_list, 0, len(a_list)-1)
 
-    def __quicksort_helper(self, alist,first,last):
-        if first<last:
+    def __quicksort_helper(self, a_list, first, last):
+        if first < last:
 
-            splitpoint = self.__partition(alist,first,last)
+            splitpoint = self.__partition(a_list, first, last)
 
-            self.__quicksort_helper(alist,first,splitpoint-1)
-            self.__quicksort_helper(alist,splitpoint+1,last)
+            self.__quicksort_helper(a_list, first, splitpoint-1)
+            self.__quicksort_helper(a_list, splitpoint + 1, last)
 
-
-    def __partition(self, alist,first,last):
-        pivotvalue = alist[first]
+    def __partition(self, a_list, first, last):
+        pivotvalue = a_list[first]
 
         leftmark = first+1
         rightmark = last
@@ -20,22 +19,21 @@ class Sort():
         done = False
         while not done:
 
-            while leftmark <= rightmark and alist[leftmark] <= pivotvalue:
+            while leftmark <= rightmark and a_list[leftmark] <= pivotvalue:
                 leftmark = leftmark + 1
 
-            while alist[rightmark] >= pivotvalue and rightmark >= leftmark:
-                rightmark = rightmark -1
+            while a_list[rightmark] >= pivotvalue and rightmark >= leftmark:
+                rightmark = rightmark - 1
 
             if rightmark < leftmark:
                 done = True
             else:
-                temp = alist[leftmark]
-                alist[leftmark] = alist[rightmark]
-                alist[rightmark] = temp
+                temp = a_list[leftmark]
+                a_list[leftmark] = a_list[rightmark]
+                a_list[rightmark] = temp
 
-        temp = alist[first]
-        alist[first] = alist[rightmark]
-        alist[rightmark] = temp
-
+        temp = a_list[first]
+        a_list[first] = a_list[rightmark]
+        a_list[rightmark] = temp
 
         return rightmark
