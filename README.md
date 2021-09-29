@@ -20,6 +20,18 @@ SECRET_KEY=YOUR_SECRET_KEY
 $ docker-compose up
 ```
 
+### So you shall migrate
+
+```shell
+$ docker-compose run web python manage.py migrate
+```
+
+## Run test cases
+
+```shell
+$ docker-compose run web python manage.py test
+```
+
 ## Run test cases
 
 ```shell
