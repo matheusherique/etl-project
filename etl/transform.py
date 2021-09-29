@@ -1,5 +1,6 @@
 from .sort import Sort
 
+
 class Transform():
 
     def concat_lists(self, list_of_lists):
@@ -7,7 +8,7 @@ class Transform():
 
         for item in list_of_lists:
             if item is not None:
-                complete_list+=item
+                complete_list += item
 
         return complete_list
 
@@ -15,7 +16,3 @@ class Transform():
         alist = self.concat_lists(alist)
         Sort().quicksort(alist)
         return alist
-
-
-
-    
