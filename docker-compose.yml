@@ -1,0 +1,22 @@
+version: "3"
+   
+services:
+  db:
+    image: postgres
+    container_name: postgres-etl
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    env_file:
+      - ./.env
+  web:
+    build: .
+    container_name: django-etl
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    env_file:
+      - ./.env
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
