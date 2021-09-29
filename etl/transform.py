@@ -5,8 +5,9 @@ class Transform():
     def concat_lists(self, list_of_lists):
         complete_list = []
 
-        for alist in list_of_lists:
-            complete_list+=alist
+        for item in list_of_lists:
+            if item is not None:
+                complete_list+=item
 
         return complete_list
 
