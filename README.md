@@ -37,3 +37,10 @@ $ docker-compose run web python manage.py migrate
 ```shell
 $ docker-compose run web python manage.py test
 ```
+
+## Run coverage
+
+```shell
+$ docker-compose run web coverage run --source='.' manage.py test 
+$ docker-compose run web coverage report
+```

@@ -1,16 +1,5 @@
 from django.test import TestCase
-from .sort import Sort
-from .transform import Transform
-from .extract import Extract
-
-
-class SortTestCase(TestCase):
-    def test_quicksort(self):
-        alist = [9, 3, 4, 2, 6, 7, 5, 1, 8, 0]
-        sorted_list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-        Sort().quicksort(alist)
-
-        self.assertEqual(alist, sorted_list)
+from ..transform import Transform
 
 
 class TransformTestCase(TestCase):
@@ -36,14 +25,3 @@ class TransformTestCase(TestCase):
         list_of_lists = Transform().sort_numbers_list(list_of_lists)
 
         self.assertEqual(list_of_lists, alist)
-
-
-class ExtractTestCase(TestCase):
-    def test_get_numbers_list(self):
-        first_element = 0.4181707133672159
-        last_element = 0.2761236121962305
-        numbers_list = Extract(times=10001).get_number_list()
-
-        self.assertEqual(numbers_list[0][0], first_element)
-        self.assertEqual(numbers_list[1][-1], last_element)
-        self.assertEqual(len(numbers_list), 10000)
