@@ -1,5 +1,7 @@
 # ETL Project
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/f5e6b2036d08df29da6a/maintainability)](https://codeclimate.com/github/matheusherique/etl-project/maintainability)
+
 ## Start project
 
 ### Before starting the project create a .env file
